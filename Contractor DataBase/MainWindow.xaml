@@ -1,0 +1,33 @@
+﻿<controls:MetroWindow x:Class="Contractor_DataBase.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Contractor_DataBase"
+        mc:Ignorable="d"
+        xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        Title="MainWindow" Height="350" Width="582.67" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="176*"/>
+            <ColumnDefinition Width="343*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="ContractorList" HorizontalAlignment="Left" Height="272" Margin="10,10,0,0" VerticalAlignment="Top" Width="155" SelectionChanged="ContractorList_SelectionChanged" PreviewMouseDoubleClick="ContractorList_PreviewMouseDoubleClick"/>
+        <Button x:Name="NewContractorBtn" Content="Новый Поставщик" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="251,287,0,0" Click="newContractorBtn_Click" Grid.Column="1"/>
+        <Button x:Name="RefreshBtn" Content="Обновить" HorizontalAlignment="Left" Margin="10,287,0,0" VerticalAlignment="Top" Width="75" Click="RefreshBtn_Click"/>
+        <Button x:Name="RemoveBtn" Content="Удалить" HorizontalAlignment="Left" Margin="90,287,0,0" VerticalAlignment="Top" Width="75" Click="RemoveBtn_Click"/>
+        <Label Content="Поставщик:" HorizontalAlignment="Left" Margin="7,10,0,0" VerticalAlignment="Top" Width="111" Grid.Column="1"/>
+        <Label Content="Контактное лицо:" HorizontalAlignment="Left" Margin="7,41,0,0" VerticalAlignment="Top" Width="111" Grid.Column="1"/>
+        <Label Content="Эл. почта:" HorizontalAlignment="Left" Margin="7,72,0,0" VerticalAlignment="Top" Width="111" Grid.Column="1"/>
+        <Label Content="Номер телефона:" HorizontalAlignment="Left" Margin="7,103,0,0" VerticalAlignment="Top" Width="111" Grid.Column="1"/>
+        <Label x:Name="ContractorNamelbl" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="123,10,0,0" VerticalAlignment="Top" Width="248"/>
+        <Label x:Name="ManagerNamelbl" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="123,41,0,0" VerticalAlignment="Top" Width="248"/>
+        <Label x:Name="Emaillbl" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="123,72,0,0" VerticalAlignment="Top" Width="248"/>
+        <Label x:Name="Phonelbl" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="123,103,0,0" VerticalAlignment="Top" Width="248"/>
+        <Button x:Name="DeleteOrderBtn" Content="Удалить заказ" Grid.Column="1" HorizontalAlignment="Left" Margin="10,287,0,0" VerticalAlignment="Top" Width="108" Click="DeleteOrderBtn_Click"/>
+        <Button x:Name="AddOrderBtn" Content="Добавить заказ" Grid.Column="1" HorizontalAlignment="Left" Margin="123,287,0,0" VerticalAlignment="Top" Width="123" Click="AddOrderBtn_Click"/>
+        <Label Content="Заказы от контрагента:" Grid.Column="1" HorizontalAlignment="Left" Margin="7,134,0,0" VerticalAlignment="Top" Width="141"/>
+        <ListBox x:Name="OrdersListBox" Grid.Column="1" HorizontalAlignment="Left" Height="117" Margin="7,165,0,0" VerticalAlignment="Top" Width="364" PreviewMouseDoubleClick="OrdersListBox_PreviewMouseDoubleClick"/>
+
+    </Grid>
+</controls:MetroWindow>
