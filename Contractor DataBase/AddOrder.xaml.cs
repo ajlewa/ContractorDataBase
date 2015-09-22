@@ -170,28 +170,19 @@ namespace Contractor_DataBase
 
         private void delPositionBtn_Click(object sender, RoutedEventArgs e)
         {
-            GridItems.Remove((PositionsQty) OrderPositions.SelectedItem);
+            if (_order != null)
+            {
+                using (var db = new ContractorContext())
+                {
+                    if (((PositionsQty)OrderPositions.SelectedItem).OrderId == _order.OrderId)
+                    {
+                        db.PositionsQties.Remove(db.PositionsQties.Find(((PositionsQty)OrderPositions.SelectedItem).Id));
+                        db.SaveChanges();
+                    }
+                }
+            }
+            GridItems.Remove((PositionsQty)OrderPositions.SelectedItem);
             OrderPositions.Items.Refresh();
-            //if (_order != null)
-            //{
-            //    using (var db = new ContractorContext())
-            //    {
-            //        if (
-            //            db.PositionsQties.ToList()
-            //                .First(
-            //                    i =>
-            //                        i.Position == ((PositionsQty) OrderPositions.SelectedItem).Position &&
-            //                        i.OrderId == _order.OrderId) != null)
-            //        {
-            //            db.PositionsQties.Remove(db.PositionsQties.ToList()
-            //                .First(
-            //                    i =>
-            //                        i.Position == ((PositionsQty) OrderPositions.SelectedItem).Position &&
-            //                        i.OrderId == _order.OrderId));
-            //        }
-            //    }
-            //}
-            
         }
     }
 }
