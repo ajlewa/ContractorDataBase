@@ -1,20 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using MahApps.Metro.Controls;
-using System.Data.Entity;
 using System.IO;
 using Contractor_DataBase.DataModels;
 using MahApps.Metro.Controls.Dialogs;
@@ -34,14 +23,11 @@ namespace Contractor_DataBase
             FillContractorList();
             
         }
-
+        //Logging exceptions
         private static void MyHandler(object sender, UnhandledExceptionEventArgs args)
         {
             string logPath = System.AppDomain.CurrentDomain.BaseDirectory + "\\log.txt";
             Exception e = (Exception) args.ExceptionObject;
-            MessageBox.Show("MyHandler caught : " + e.Message);
-            MessageBox.Show("Inner Exception : " + e.InnerException.Message);
-            MessageBox.Show("2nd Inner Exception : " + e.InnerException.InnerException.Message);
             MessageBox.Show("Log will be saved to: " + logPath);
             FileStream fs = new FileStream(logPath, FileMode.Create);
             StreamWriter sw = new StreamWriter(fs);

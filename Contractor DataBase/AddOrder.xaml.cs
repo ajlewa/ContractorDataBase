@@ -1,24 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.Entity.Migrations;
-using System.Diagnostics.Eventing.Reader;
 using System.Globalization;
 using System.Linq;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using MahApps.Metro.Controls;
 using Contractor_DataBase.DataModels;
-using MahApps.Metro.Controls.Dialogs;
 
 namespace Contractor_DataBase
 {
